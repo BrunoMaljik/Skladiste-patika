@@ -6,7 +6,7 @@
 
 static int brojPatika = 0;
 
-void inicijalizacija(const char* const ime) {
+void inicijalizacija(const char* const ime) { 
 
 	FILE* fp = fopen(ime, "rb");
 
