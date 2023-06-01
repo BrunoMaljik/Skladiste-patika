@@ -6,7 +6,7 @@
 #include "dataType.h"
 
 int izbornik(const char* const ime) {  
-	//koncept 8
+//8
 
 	printf("Odaberite jednu od opcija: \n\n");
 	printf(" 1: Dodajte nove patike:\n\n");
@@ -20,7 +20,7 @@ int izbornik(const char* const ime) {
 	int odabir = 0;
 	static PATIKE* poljePatika = NULL;
 	static PATIKE* pronadenePatike = NULL;
-	//koncept 9
+//9
 
 	scanf("%d", &odabir);
 	system("cls");
