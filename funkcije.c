@@ -8,7 +8,7 @@
 
 
 static int brojPatika = 0;
-// 5
+//5
 
 
 void inicijalizacija(const char* const ime) {
