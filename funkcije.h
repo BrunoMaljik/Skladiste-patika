@@ -10,8 +10,9 @@ void ispisiPatike(const PATIKE* const);
 void brisanjePatika(PATIKE* const, const char* const);
 void* pretrazivanje(PATIKE* const);
 void zamjena(PATIKE* const, PATIKE* const);
-void* sortirajCijenaMax(char*);
-void ispisiSortiranoMax(const PATIKE* polje);
-void* sortirajCijenaMin(char*);
-void ispisiSortiranoMin(const PATIKE* polje);
+void* sortirajMaxCijenu(PATIKE*);
+void ispisiSortiranoMax(const PATIKE*);
+void* sortirajMinCijenu(char*);
+void ispisiSortiranoMin(const PATIKE*);
+void brisanjeDatoteke(char* fp);
 #endif
