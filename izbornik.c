@@ -3,26 +3,29 @@
 #include "funkcije.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "dataType.h"
 
-int izbornik(const char* const ime) {
+int izbornik(const char* const ime) {  
+	//koncept 8
 
-	printf("Odaberite jednu od ponudenih opcija: \n\n");
-	printf("Opcija 1: Dodavanje patika:\n\n");
-	printf("Opcija 2: Sortiranje patike po cijeni od najvece\n\n");
-	printf("Opcija 3: Sortiranje patike po cijeni od najmanje\n\n");
-	printf("Opcija 4: Ispis svih patika\n\n");
-	printf("Opcija 5: Pretrazivanje patika po ID-u\n\n");
-	printf("Opcija 6: Brisanje patika\n\n");
-	printf("Opcija 7: Zavrsetak programa\n\n");
+	printf("Odaberite jednu od opcija: \n\n");
+	printf(" 1: Dodajte nove patike:\n\n");
+	printf(" 2: Sortiranje patike po cijeni od najvece\n\n");
+	printf(" 3: Sortiranje patike po cijeni od najmanje\n\n");
+	printf(" 4: Ispis unesenih patika\n\n");
+	printf(" 5: Pretrazivanje patika po ID-u\n\n");
+	printf(" 6: Brisanje unesenih patika\n\n");
+	printf(" 7: Zatvorite program\n\n");
 
-	int opcija = 0;
+	int odabir = 0;
 	static PATIKE* poljePatika = NULL;
 	static PATIKE* pronadenePatike = NULL;
+	//koncept 9
 
-	scanf("%d", &opcija);
+	scanf("%d", &odabir);
 	system("cls");
 
-	switch (opcija) {
+	switch (odabir) {
 
 	case 1:
 
@@ -38,7 +41,7 @@ int izbornik(const char* const ime) {
 		poljePatika = (PATIKE*)ucitajPatike(ime);
 		ispisiSortiranoMax(poljePatika);
 
-        break;
+		break;
 
 
 	case 3:
@@ -95,14 +98,14 @@ int izbornik(const char* const ime) {
 		break;
 
 	case 7:
-		opcija = izlaz(poljePatika);
+		odabir = izlaz(poljePatika);
 
 		break;
 	default:
-		opcija = 0;
+		odabir = 0;
 
 	}
 
-	return opcija;
+	return odabir;
 
 }
