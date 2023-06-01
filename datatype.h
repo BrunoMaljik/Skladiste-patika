@@ -1,9 +1,11 @@
 #ifndef DATATYPE_H
 #define DATATYPE_H
-
-typedef struct patike {
+// koncept 10
+typedef struct patike { 
+	//koncept 3
 	int id;
 	char marka[20];
+	//koncept 12
 	float velicina;
 	float cijena;
 	int kolicina;
