@@ -3,12 +3,14 @@
 #include<stdlib.h>
 #include<string.h>
 #include "dataType.h"
-//koncept 6
+//6
 
 
 
 static int brojPatika = 0;
-// Koncept 5
+// 5
+
+
 void inicijalizacija(const char* const ime) {
 
 	FILE* fp = fopen(ime, "rb");
@@ -26,12 +28,16 @@ void inicijalizacija(const char* const ime) {
 }
 
 void dodajPatike(const char* const ime) {
-	//koncept 4
+//4
+
+
 	FILE* fp = fopen(ime, "rb+");
 
 	if (fp == NULL) {
 		perror("Dodajte patike u datoteku patike.bin");
-		//koncept 19
+//19
+
+
 		exit(EXIT_FAILURE);
 	}
 
@@ -81,7 +87,8 @@ void* ucitajPatike(const char* const ime) {
 	printf("Broj patika: %d\n", brojPatika);
 
 	PATIKE* poljePatika = (PATIKE*)calloc(brojPatika, sizeof(PATIKE));
-	//koncept 13
+//13
+
 
 	if (poljePatika == NULL) {
 		perror("Zauzimanje memorije za polje patika");
@@ -110,7 +117,8 @@ void brisanjePatika(PATIKE* const polje, const char* const dat) {
 	}
 
 	FILE* fp = fopen(dat, "rb+");
-	//koncept 16
+//16
+
 
 	if (fp == NULL) {
 		perror("Brisanje patika");
@@ -119,8 +127,9 @@ void brisanjePatika(PATIKE* const polje, const char* const dat) {
 
 	fseek(fp, sizeof(int), SEEK_CUR);
 
-	int i, trazeniID; 
-	//koncept 4
+	int i, trazeniID;
+//4
+
 
 	printf("Unesite ID patika kojeg zelite obrisati: ");
 
@@ -132,7 +141,8 @@ void brisanjePatika(PATIKE* const polje, const char* const dat) {
 	} while (trazeniID < 1 || trazeniID > brojPatika);
 
 	PATIKE* poljePatika = (PATIKE*)calloc(brojPatika - 1, sizeof(PATIKE));
-	//koncept 14
+//14
+
 
 	int brojac = 0;
 
@@ -153,10 +163,12 @@ void brisanjePatika(PATIKE* const polje, const char* const dat) {
 
 	free(poljePatika);
 	poljePatika = NULL;
-	//koncept 15
+//15
+
 
 	rewind(fp);
-	//koncept 17
+//17
+
 
 	fwrite(&brojac, sizeof(int), 1, fp);
 	fclose(fp);
@@ -166,7 +178,9 @@ void brisanjePatika(PATIKE* const polje, const char* const dat) {
 }
 
 void* sortirajMaxCijenu(PATIKE* polje) {
-	//koncept 20
+//20 
+
+
 	int max = -1;
 
 	for (int i = 0; i < brojPatika - 1; i++) {
@@ -259,12 +273,13 @@ void ispisiPatike(const PATIKE* const polje) {
 }
 
 void* pretrazivanje(PATIKE* const polje) {
-	//koncept 21
+//21
+
 
 	if (polje == NULL) {
 		printf("Polje patika je prazno");
 		return NULL;
-		//koncept 11
+//11
 	}
 	int i, trazeniID;
 
@@ -287,7 +302,8 @@ void brisanjeDatoteke(char* fp) {
 
 	int status;
 	status = remove("patike.bin");
-	//18
+//18
+
 
 	if (status == 0) {
 		printf("Datoteka uspjesno obrisana\n");
