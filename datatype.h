@@ -1,6 +1,6 @@
 #ifndef DATATYPE_H
 #define DATATYPE_H
-// koncept 10
+//10
 typedef struct patike { 
 	//koncept 3
 	int id;
